@@ -9,6 +9,7 @@ function error(res, status, message) {
 }
 
 createServer(async (req, res) => {
+	res.setHeader('Access-Control-Allow-Origin', '*')
 	try {
 		const url = req.url?.slice(1)
 		const method = req.method || 'GET'
